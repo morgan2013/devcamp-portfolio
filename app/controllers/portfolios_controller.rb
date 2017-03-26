@@ -1,6 +1,10 @@
 class PortfoliosController < ApplicationController
   def index
-    @portfolio_items = Portfolio.all.order(created_at: :desc)
+    @portfolio_items = Portfolio.all
+  end
+
+  def angular
+    @portfolio_items = Portfolio.angular
   end
 
   def new
