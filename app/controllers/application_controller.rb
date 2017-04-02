@@ -3,10 +3,17 @@ class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SetSource
 
+  before_action :set_title_default
+
   def current_user
     super || OpenStruct.new(name: 'Guest',
                             first_name: 'guest',
                             last_name: 'guest',
                             email: 'example.com')
+  end
+
+  def set_title_default
+    @page_title = 'Devcamp Portfolio | My Portfolio Website'
+    @seo_keywords = 'Jordan Hudgens portfolio'
   end
 end
