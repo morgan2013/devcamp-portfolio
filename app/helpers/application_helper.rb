@@ -14,4 +14,8 @@ module ApplicationHelper
       content_tag :p, "Thanks for visiting me from #{session[:source]}"
     end
   end
+
+  def copyright_generator
+    DevcampMorganViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
+  end
 end
