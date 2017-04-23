@@ -6,10 +6,14 @@ class ApplicationController < ActionController::Base
   before_action :set_title_default
 
   def current_user
-    super || OpenStruct.new(name: 'Guest',
-                            first_name: 'guest',
-                            last_name: 'guest',
-                            email: 'example.com')
+    super || guest_user
+  end
+
+  def guest_user
+    GuestUser.new(name: 'Guest',
+                  first_name: 'guest',
+                  last_name: 'guest',
+                  email: 'example.com')
   end
 
   def set_title_default
