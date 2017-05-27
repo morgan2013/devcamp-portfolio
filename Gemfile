@@ -33,6 +33,7 @@ gem 'devcamp_morgan_view_tool', git: 'https://github.com/morgan2013/devcamp_morg
 gem 'petergate', '~> 1.7'
 gem "font-awesome-rails"
 gem 'kaminari'
+gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
