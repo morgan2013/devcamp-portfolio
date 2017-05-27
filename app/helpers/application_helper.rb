@@ -19,4 +19,16 @@ module ApplicationHelper
   def copyright_generator
     DevcampMorganViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
   end
+
+  def nav_helper style, tag_type
+    [{title: ' Home ', href:root_path },{title: ' About ', href:about_path},
+     {title: ' Contact ', href:contact_path},{title: ' Blogs ', href:blogs_path},
+     {title: ' Portfolio ', href:portfolios_path} ].map  do |item|
+       content_tag(tag_type,  link_to(item[:title], item[:href], class: [style, active?(item[:href])]))
+     end.inject(''){|str, i| str+= " #{i} "}.html_safe
+  end
+
+  def active? path
+    'active' if current_page? path
+  end
 end
