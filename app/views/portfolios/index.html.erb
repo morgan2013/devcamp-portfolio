@@ -1,7 +1,7 @@
 <div class="album text-muted">
   <div class="container">
     <!-- <%= link_to 'Create New Item', new_portfolio_path %> -->
-    <div class="row sortable">
+    <div class="row <%= 'sortable' if logged_in?(:site_admin) %>">
       <% @portfolio_items.each do |item| %>
 
         <div class="card" data-id="<%= item.id %>">
