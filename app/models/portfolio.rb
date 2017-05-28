@@ -1,9 +1,12 @@
 class Portfolio < ApplicationRecord
-  has_many :technologies
+  has_many :technologies, dependent: :destroy
   accepts_nested_attributes_for :technologies,
                                reject_if: ->(attrs){ attrs['name'].blank? }
   include Placeholder
   validates :title, :body, :main_image, :thumb_image, presence: true
+
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image,  PortfolioUploader
 
   scope :angular, -> { where(subtitle: 'Angular').order(created_at: :desc) }
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails').order(created_at: :desc) }
