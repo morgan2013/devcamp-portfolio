@@ -41,6 +41,7 @@ gem 'dotenv-rails'
 gem 'cocoon'
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 5.16'
+gem 'redis', '~> 3.3', '>= 3.3.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
