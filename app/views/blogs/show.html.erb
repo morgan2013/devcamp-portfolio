@@ -12,5 +12,7 @@
       <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
     <% end %>
   <% end %>
-  <%= render @comments %>
+  <div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @comments %>
+  </div>
 </div><!-- /.blog-main -->
