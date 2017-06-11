@@ -14,8 +14,8 @@ module ApplicationCable
 
     def connect
       self.current_user = find_verified_user || guest_user
-      logger_add_tags 'ActionCable', current_user.email
-      logger_add_tags 'ActionCable', current_user.id
+      logger.add_tags 'ActionCable1', current_user.email
+      logger.add_tags 'ActionCable2', current_user.id
     end
 
     protected
